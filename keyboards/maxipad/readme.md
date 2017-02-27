@@ -11,6 +11,21 @@ Download or clone the whole firmware and navigate to the keyboards/maxipad folde
 
 Depending on which keymap you would like to use, you will have to compile slightly differently.
 
+### Teensy
+
+The default `config.h` file is for Pro Micro. For use with Teensy boards, make sure to comment out the Pro Micro section, and uncomment the Teensy section: 
+
+```
+//Pro micro pinout
+    //#define MATRIX_ROW_PINS { B6, B2, B3, B1, F7 }
+    //#define MATRIX_COL_PINS { F4, C6, D7, F5, B4, B5 }
+    //#define UNUSED_PINS
+//Teensy 2 pinout
+     #define MATRIX_ROW_PINS { B6, F7, B2, B3, B1 }
+    #define MATRIX_COL_PINS { F6, C6, D7, F5, B4, B5 }
+    #define UNUSED_PINS
+```
+
 ### Default
 
 To build with the default keymap, simply run `make`.
